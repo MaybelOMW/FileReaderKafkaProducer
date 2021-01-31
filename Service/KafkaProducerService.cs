@@ -12,7 +12,7 @@ namespace ReadCSV.Service
         private ILogger _logger;
         private IProducer<Null, string> _producer;
         private IReader _reader;
-        private string topic;
+        private string _topic;
          
         public KafkaProducerService(ILogger logger, IProducer<Null, string> producer, IReader reader)
         {
@@ -24,13 +24,13 @@ namespace ReadCSV.Service
         public async Task Start()
         {
             Console.WriteLine("What topic to publish?");
-            topic = Console.ReadLine();
+            _topic = Console.ReadLine();
 
             var dataObj = _reader.ReadData();
             string dataStr = JsonConvert.SerializeObject(dataObj);
 
-            await _producer.ProduceAsync(topic, new Message<Null, string> { Value = dataStr });
-            _logger.Information("Published topic: {0}", topic);
+            await _producer.ProduceAsync(_topic, new Message<Null, string> { Value = dataStr });
+            _logger.Information("Published topic: {0}", _topic);
             _logger.Information("Data string: {0}", dataStr);
         }
 
