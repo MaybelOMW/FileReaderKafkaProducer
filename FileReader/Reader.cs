@@ -22,7 +22,6 @@ namespace ReadCSV.FileReader
             {
                 string rawData = System.IO.File.ReadAllText(_path);
                 _logger.Information("Reading file from {0}", _path);
-                _logger.Information("Total character received: {0}", rawData.Length);
 
                 _DataField = JsonConvert.DeserializeObject<List<DataModel>>(rawData);
             }
