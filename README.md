@@ -11,7 +11,7 @@ To be added soon.
 
 2. Download the code in this repository. 
 
-3. To check if the message/data string published is able to be consumed. Checkout [FileReaderKafka](https://github.com/MaybelOMW/FileReaderKafkaConsumer) !
+3. To check if the message/data string published is able to be consumed. Checkout [FileReaderKafkaConsumer](https://github.com/MaybelOMW/FileReaderKafkaConsumer) !
 
 ## Framework and Packages Detail
 **Framework: netcoreapp3.1** 
